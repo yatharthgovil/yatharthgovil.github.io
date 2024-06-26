@@ -1,0 +1,477 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head></head>
+<style type="text/css">
+
+#InfBrowseFilesDiv {
+	    position : absolute;
+	    left :  50%;
+	    margin-left : -300px;
+	    top :   120px;
+	    width : 600px;
+   	}
+	.dirTree {
+    	overflow:auto;
+  		padding:5px;
+  		height:350px;
+  		width:553px;
+  		border-style: double;
+  		border-width:2px;
+  		border-color: #AABACD;
+  	}
+
+      .d-shell--vertical .d-shell__header {
+      -ms-grid-row: 1;
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 2;
+      grid-area: Header;
+      display: block;
+      padding-left: 0;
+      padding-right: 0;
+      }
+      header {
+      display: block;
+      unicode-bidi: isolate;
+      }
+      .d-shell__header {
+      --totl-primary-background: rgba(255,255,255,.8);
+      --totl-primary-font-color: #000;
+      --totl-primate-font-descolor: #565656;
+      --d-color--grey--0: #f5f5f5;
+      --d-color--grey--1: #f4f4f4;
+      --d-color--grey--2: #eaeaea;
+      --d-color--grey--3: #dfdfdf;
+      --d-color--grey--4: #ccc;
+      --d-color--grey--5: #919191;
+      --d-color--grey--6: #757575;
+      --d-color--grey--7: #373737;
+      --d-color--red--1: #ffeae5;
+      --d-color--red--2: #ff8389;
+      --d-color--red--3: #e23400;
+      --d-color--red--4: #e91111;
+      --d-color--red--5: #750e13;
+      --d-color--yellow--1: #fff2cf;
+      --d-color--yellow--2: #ffee73;
+      --d-color--yellow--3: #ffd300;
+      --d-color--yellow--4: #ffcd44;
+      --d-color--yellow--5: #b28600;
+      --d-color--yellow--6: #684e00;
+      --d-color--yellow--7: #302400;
+      --d-color--blue--1: #f5fafe;
+      --d-color--blue--2: #ecf3ff;
+      --d-color--blue--3: #91baff;
+      --d-color--blue--4: #4589ff;
+      --d-color--blue--5: #0a4fc7;
+      --d-color--blue--6: #001d6c;
+      --d-color--green--1: #e7f6d9;
+      --d-color--green--2: #d4edb1;
+      --d-color--green--3: #93e59a;
+      --d-color--green--4: #349a3d;
+      --d-color--green--5: #26872e;
+      --d-color--green--6: #106a18;
+      --d-color--green--7: #063d0b;
+      --d-color--orange--1: #ffdfcd;
+      --d-color--orange--2: #ffbd8d;
+      --d-color--orange--3: #ff6200;
+      --d-color--orange--4: #ff4d00;
+      --d-color--orange--5: #8a3800;
+      --d-color--orange--6: #3e1a00;
+      --d-color--purple--1: #d5baff;
+      --d-color--purple--2: #a56eff;
+      --d-color--purple--3: #6929c4;
+      --d-color--purple--4: #31135e;
+      --d-color--berry--1: #f0adc6;
+      --d-color--berry--2: #ed6496;
+      --d-color--berry--3: #d81b60;
+      --d-color--berry--4: #66083a;
+      --d-color--aqua--1: #ddf2f2;
+      --d-color--aqua--2: #99dce3;
+      --d-color--aqua--3: #7dc9d1;
+      --d-color--aqua--4: #00a1b3;
+      --d-color--aqua--5: #005d5d;
+      --d-color--aqua--6: #022b30;
+      --d-color--periwinkle--1: #afc6f9;
+      --d-color--periwinkle--2: #8aa2f9;
+      --d-color--periwinkle--3: #5e71cc;
+      --d-color--lime--1: #d7e29a;
+      --d-color--lime--2: #c5d152;
+      --d-color--lime--3: #a3b539;
+      --d-color--cyan--0: #91cfee;
+      --d-color--cyan--1: #039be5;
+      --d-color--cyan--2: #01579b;
+      --d-color--cyan--3: #012749;
+      --d-color--brown--0: #cfafa3;
+      --d-color--brown--1: #836f68;
+      --d-color--brown--2: #6d4c41;
+      --d-color--brown--3: #3e2723;
+      --d-global--background-color: #fff;
+      --d-global--text-color: #000;
+      --d-global--base-color--lightest: #f4f4f4;
+      --d-global--base-color--lighter: #eaeaea;
+      --d-global--base-color--light: #dfdfdf;
+      --d-global--base-color: #919191;
+      --d-global--base-color--dark: #919191;
+      --d-global--base-color--darker: #757575;
+      --d-global--base-color--darkest: #373737;
+      --d-global--base-color--ink: #373737;
+      --d-global--primary-color--lightest: #f5fafe;
+      --d-global--primary-color--lighter: #ecf3ff;
+      --d-global--primary-color--light: #4589ff;
+      --d-global--primary-color: #0a4fc7;
+      --d-global--primary-color--dark: #0a4fc7;
+      --d-global--primary-color--darker: #001d6c;
+      --d-global--primary-color--darkest: #001d6c;
+      --d-global--accent-color--lightest: #ffdfcd;
+      --d-global--accent-color--lighter: #ffbd8d;
+      --d-global--accent-color--light: #ff7d00;
+      --d-global--accent-color: #ff4d00;
+      --d-global--accent-color--dark: #e03400;
+      --d-global--accent-color--darker: #e03400;
+      --d-global--accent-color--darkest: #e03400;
+      --d-global--header--background-color: var(--d-global--background-color);
+      --d-global--nav--background-color: var(--d-global--background-color);
+      --d-radius--xs: 4px;
+      --d-radius--sm: 6px;
+      --d-radius--md: 8px;
+      --d-radius--lg: 10px;
+      --d-radius--xl: 12px;
+      --d-radius--circle: 100%;
+      --d-space-0: 0rem;
+      --d-space-1: 0.0625rem;
+      --d-space-2: 0.125rem;
+      --d-space-4: 0.25rem;
+      --d-space-6: 0.375rem;
+      --d-space-8: 0.5rem;
+      --d-space-10: 0.625rem;
+      --d-space-12: 0.75rem;
+      --d-space-14: 0.875rem;
+      --d-space-16: 1rem;
+      --d-space-18: 1.125rem;
+      --d-space-20: 1.25rem;
+      --d-space-24: 1.5rem;
+      --d-space-28: 1.75rem;
+      --d-space-32: 2rem;
+      --d-space-36: 2.25rem;
+      --d-space-40: 2.5rem;
+      --d-space-44: 2.75rem;
+      --d-space-48: 3rem;
+      --d-space-52: 3.25rem;
+      --d-space-56: 3.5rem;
+      --d-space-60: 3.75rem;
+      --d-space-64: 4rem;
+      --d-space-68: 4.25rem;
+      --d-space-72: 4.5rem;
+      --d-space-76: 4.75rem;
+      --d-space-80: 5rem;
+      --d-space-84: 5.25rem;
+      --d-space-88: 5.5rem;
+      --d-space-92: 5.75rem;
+      --d-space-96: 6rem;
+      --d-space-100: 6.25rem;
+      --d-space-104: 6.5rem;
+      --d-space-108: 6.75rem;
+      --d-space-112: 7rem;
+      --d-space-320: 20rem;
+      --d-space-480: 30rem;
+      --d-space-600: 37.5rem;
+      --d-space-800: 50rem;
+      --d-space-1024: 64rem;
+      --d-space-1280: 80rem;
+      --d-space-1440: 90rem;
+      --d-space-1600: 100rem;
+      --d-space-1920: 120rem;
+      --d-space-small-1: var(--d-space-1);
+      --d-space-small-2: var(--d-space-2);
+      --d-space-small-3: var(--d-space-4);
+      --d-space-small-4: var(--d-space-8);
+      --d-space-small-5: var(--d-space-12);
+      --d-space-medium-1: var(--d-space-14);
+      --d-space-medium-2: var(--d-space-16);
+      --d-space-medium-3: var(--d-space-20);
+      --d-space-medium-4: var(--d-space-24);
+      --d-space-medium-5: var(--d-space-32);
+      --d-space-large-1: var(--d-space-40);
+      --d-space-large-2: var(--d-space-44);
+      --d-space-large-3: var(--d-space-60);
+      --d-space-large-4: var(--d-space-80);
+      --d-space-large-5: var(--d-space-100);
+      --d-break-small-1: var(--d-space-320);
+      --d-break-small-2: var(--d-space-480);
+      --d-break-small-3: var(--d-space-600);
+      --d-break-medium-1: var(--d-space-800);
+      --d-break-medium-2: var(--d-space-1024);
+      --d-break-medium-3: var(--d-space-1280);
+      --d-break-large-1: var(--d-space-1440);
+      --d-break-large-2: var(--d-space-1600);
+      --d-break-large-3: var(--d-space-1920);
+      --d-duration--fastest: 0.28s;
+      --d-duration--slower: 1.6s;
+      --d-duration--slowest: 2.8s;
+      --d-animation-duration--0: 0ms;
+      --d-animation-duration--50: 50ms;
+      --d-animation-duration--100: 100ms;
+      --d-animation-duration--150: 150ms;
+      --d-animation-duration--200: 200ms;
+      --d-animation-duration--250: 250ms;
+      --d-animation-duration--300: 300ms;
+      --d-animation-duration--350: 350ms;
+      --d-animation-duration--400: 400ms;
+      --d-animation-duration--450: 450ms;
+      --d-animation-duration--500: 500ms;
+      --d-animation-duration--550: 550ms;
+      --d-animation-duration--600: 600ms;
+      --d-animation-duration--650: 650ms;
+      --d-animation-duration--700: 700ms;
+      --d-animation-duration--750: 750ms;
+      --d-animation-duration--800: 800ms;
+      --d-animation-duration--850: 850ms;
+      --d-animation-duration--900: 900ms;
+      --d-animation-duration--950: 950ms;
+      --d-animation-duration--1000: 1000ms;
+      --d-animation-duration--1250: 1250ms;
+      --d-animation-duration--1500: 1500ms;
+      --d-animation-duration--1750: 1750ms;
+      --d-animation-duration--2000: 2000ms;
+      --d-ease-linear: cubic-bezier(0, 0, 0, 0);
+      --d-ease-in: cubic-bezier(0.75, 0, 1, 1);
+      --d-ease-out: cubic-bezier(0, 0, 0.25, 1);
+      --d-ease-in-out: cubic-bezier(0.75, 0, 0.25, 1);
+      --d-animation-easing--linear: cubic-bezier(0, 0, 1, 1);
+      --d-animation-easing--ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+      --d-animation-easing--ease-in: cubic-bezier(0.42, 0, 1, 1);
+      --d-animation-easing--ease-out: cubic-bezier(0, 0, 0.58, 1);
+      --d-animation-easing--ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+      color: #000;
+      font-feature-settings: "kern" 1,"liga" 1,"onum" 0,"tnum" 1,"lnum" 1;
+      --d-button--min-width: 120px;
+      --d-button--height: 40px;
+      --d-button--border-radius: 12px;
+      --d-combo-button--min-height: 40px;
+      --d-combo-button--label--border-radius: 12px 0 0 12px;
+      --d-combo-button--menu--border-radius: 0 12px 12px 0;
+      --d-datetimepicker--height: 38px;
+      --d-datetimepicker--border-radius: 12px;
+      --d-datetimepicker--calendar--border-radius: 12px;
+      --d-datetimepicker--time--menu-item--height: 40px;
+      --d-datetimepicker--time--menu-item--padding: 10px 10px 10px 16px;
+      --d-datetimepicker--time--menu--border-radius: 12px;
+      --d-daterangepicker--calendar--border-radius: 12px;
+      --d-dropdown--min-height: 40px;
+      --d-dropdown--border-radius: 12px;
+      --d-dropdown--item--icon--padding: 10px 16px;
+      --d-dropdown--button--icon--right: 9px;
+      --d-dropdown--item--padding: 10px 16px;
+      --d-dropdown--pill--margin: 8px 0 0 0;
+      --d-dropdown--pills--padding: 0 16px 8px 8px;
+      --d-dropdown--search--padding-top: 8px;
+      --d-dropdown--search--padding-buttom: 1px;
+      --d-dropdown--menu--bottom-border-radius: 0 0 12px 12px;
+      --d-dropdown--bar--search--icon--padding: 11px 8px 0 16px;
+      --d-dropdown--bar--bottom-border: 12px 12px 0 0;
+      --d-dropdown--pills--max-height: 120px;
+      --d-dropdown--button--width: 36px;
+      --d-file-picker--icon--height: 30px;
+      --d-file-picker--icon--width: 30px;
+      --d-file-picker--icon--border-radius: 0 12px 12px 0;
+      --d-form--row-spacing: 20px;
+      --d-form--control--vertical-padding: 8px;
+      --d-form--hack--font-height-offset: -4px;
+      --d-form--stacked--group--margin-bottom: 24px;
+      --d-form--stacked--label--margin-bottom: 8px;
+      --d-form--additional--padding: 8px;
+      --d-icon-button--height: 40px;
+      --d-icon-button--width: 40px;
+      --d-icon-button--border-radius: 12px;
+      --d-icon-button-small--height: 32px;
+      --d-icon-button-small--width: 32px;
+      --d-icon-button-small--border-radius: 8px;
+      --d-input--height: 40px;
+      --d-input--line-height: 40px;
+      --d-input--border-radius: 12px;
+      --d-menu-item--height: 40px;
+      --d-menu--border-radius: 12px;
+      --d-multi-input--pill--border-radius: 12px;
+      --d-multi-input--pills--padding: 0px 16px 8px 8px;
+      --d-multi-input--menu--min-height: 40px;
+      --d-multi-input--pill--margin: 8px 0 0 8px;
+      --d-multi-input--pills-input--padding: 7px 0px 0px 8px;
+      --d-pagination-default-layout--margin: 16px 0px;
+      --d-pagination-default-layout--padding-top: 16px;
+      --d-panel--header--min-height: 64px;
+      --d-panel--header--height: 72px;
+      --d-panel--toggle-expansion-icon--height: 40px;
+      --d-panel--toggle-expansion-icon--width: 40px;
+      --d-roadmap--padding: 8px;
+      --d-roadmap--border-radius: 12px;
+      --d-roadmap--step--padding: 6px 18px;
+      --d-roadmap--page--margin: 0 0 20px;
+      --d-shell--page-title--height: 80px;
+      --d-table--row-actions--padding: 2px 0;
+      --d-table--row-actions--call-to-action--font-size: 20px;
+      --d-table--header--row--height: 40px;
+      --d-table--body--cell--padding: 9px 0px;
+      --d-table--tree--subgrid--toggle--button--margin: 0 4px 0 0;
+      --d-tabs--border-radius: 12px;
+      --d-tabs--tab--border-radius: 8px;
+      --d-tabs--tab--height: 32px;
+      --d-tabs--tab--padding: 7px 14px;
+      --d-tabs--page--tab--height: 40px;
+      --d-tabs--page--tab--border-radius: 12px;
+      --d-tabs--page--tab--control--padding: 10px 14px;
+      --d-tabs--overflow--border-radius: 12px 0 0 12px;
+      --d-tabs--overflow-button-wrapper--border-radius: 0 12px 12px 0;
+      --d-tabs--overflow-button-wrapper--button--width: 32px;
+      --d-tabs--overflow-button-wrapper--button--height: 32px;
+      --d-tree--menu--bottom--border-radius: 0 0 12px 12px;
+      --d-tree--menu--find--margin: 16px 16px 0 16px;
+      --d-tree--menu--container--padding: 10px;
+      --d-wizard--toolbar--margin-bottom: 1rem;
+      --d-segmented-control--first--child--border-radius: 12px 0 0 12px;
+      --d-segmented-control--last--child--border-radius: 0 12px 12px 0;
+      --d-segmented-control--height: 40px;
+      --d-segmented-control-vertical--first--child--border-radius: 12px 12px 0 0;
+      --d-segmented-control-vertical--last--child--border-radius: 0 0 12px 12px;
+      font-family: "Roboto",Helvetica,Arial,"sans-serif";
+      font-size: unset;
+      box-sizing: border-box;
+      grid-area: Header;
+      display: block;
+      padding-left: 0;
+      padding-right: 0;
+      }
+      .d-shell__header__main {
+      background-color: #fff;
+      border-bottom: none;
+      font-size: 14px;
+      color: #373737;
+      height: 72px;
+      overflow-y: hidden;
+      padding: 0 16px 0 12px;
+      position: relative;
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .3);
+      z-index: 1000;
+      }
+      .d-version-2.d-icon-button {
+      background: 0 0;
+      font-size: 13px;
+      padding: .5rem;
+      }
+      .d-version-2.d-icon-button {
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      }
+      .d-shell__header__infa-logo {
+      background-image: url(https://non-prod.static.informaticacloud.com/qarel/ids/staticui/cloudUI/3760/cdn/app/administer/static/media/infa-logo-statement.d1109cd2.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 36px;
+      width: 148px;
+      }
+      .d-shell__header__button-group {
+      margin-left: 0;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+      -ms-flex: 1;
+      flex: 1;
+      display: flex;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      }
+      .d-shell__header__product-name {
+      font-family: Roboto, Arial, Helvetica, sans-serif;
+      margin: -1px 0 0 8px;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 18px;
+      vertical-align: middle;
+      }
+      .InfForm td.first {
+    padding-top: 10px;
+}
+.InfView td.title, .InfForm td.title, .InfForm td.title_btn, .InfForm td.title_btn {
+    color: #000;
+    border-color: #c1c1c1;
+}
+.InfForm td.vspace {
+    padding-top: 18px;
+}
+.InfForm td.title {
+    white-space: nowrap;
+    font: 500 15px Roboto;
+    padding: 0 0 8px 0;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+}
+body, div, ul, ol, li, p, span, label, br, table, tr, td, th, form, select, textarea, input, h1, h2, h3, h4, h5, h6 {
+    font-family: "Roboto", Helvetica, Arial, "sans-serif";
+    font-size: 13px;
+    }
+.InfForm td.lbl {
+    vertical-align: top;
+    white-space: nowrap;
+    padding: 4px 0 4px 0;
+}
+table  {
+margin: 10px 10px !important;
+    text-indent: initial;
+    border-spacing: 2px;
+    padding 10px 10px;
+}
+td {
+    display: table-cell;
+    vertical-align: inherit;
+    unicode-bidi: isolate;
+}
+.InfForm td.title {
+    white-space: nowrap;
+    font: 500 15px Roboto;
+    padding: 0 0 8px 0;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+}
+   </style>
+<body>
+<div class="d-shell d-shell--vertical">
+    <header role="banner" class="d-shell__header">
+        <div class="d-shell__header__main">
+            <div class="d-shell__header__left-container">
+            </div>
+            <button class="d-version-2 d-icon-button d-shell__header__close-button" tabindex="0" type="button" data-testid="shell-header-close-button" aria-label="Hide navigation labels">
+                <i class="d-shell__header__close-button__icon"></i>
+            </button><span class="d-shell__header__infa-logo" role="img" aria-label="Informatica"></span>
+            <h1 class="d-shell__header__product-name"><span class="shell__header__product" data-testid="shell-header-product"><span class="shell__header__product-name">Administrator</span><span role="button" aria-label="Administrator" tabindex="0" class="shell__header__switcher"><i class="aicon aicon__down-arrow"></i></span></span></h1>
+            <span class="d-shell__header__button-group">
+                  <div tabindex="0" title="Organization" role="button" class="shell__header__org" aria-orientation="vertical" data-testid="org-switcher-menu" data-id="OrgSwitchMenu" aria-haspopup="true" aria-expanded="false"><label class="shell__header__org__label" data-testid="shell-header-org-label-PWXQA">PWXQA</label><span class="shell__header__org__switcher"><i class="aicon aicon__down-arrow"></i></span></div>
+                  <button class="d-version-2 d-icon-button button button__icon" tabindex="0" type="button" title="Notifications" role="button" data-testid="notifications-button" aria-label="Notifications 0 unread" aria-haspopup="true" style="position: relative; overflow: visible;"><i class="aicon aicon__notifications" data-testid="shell-notifications"></i></button><button class="d-version-2 d-icon-button button button__icon" tabindex="0" type="button" data-testid="user-menu-button" aria-label="User Settings" title="User Settings" aria-haspopup="true" aria-expanded="false" id="aqfMgp0Ha8"><i class="shell__header__user__button" data-testid="shell-header-user"></i></button><button class="d-version-2 d-icon-button button button__icon" tabindex="0" type="button" title="Help" aria-label="Help"><i class="shell__header__help__button" data-testid="shell-header-smart-help"></i></button>
+               </span>
+        </div>
+    </header>
+
+    <table cellpadding="0" cellspacing="0" class="InfPane">
+        <tbody><tr><td id="paneBody" class="body" style="height: 360px;">
+            <div id="InfErrorDiv" style="display:none;"></div>
+            <div id="InfMsgDiv" style="display:none;"></div>
+
+
+            <div id="InfRuntimeDiv">
+                <div id="InfRuntimeDivErrors" style="display:none;"></div>
+                <div id="InfRuntimeDivWarns" style="display:none;"></div>
+            </div>
+            <div id="SliderContents"><form name="ConnectionForm" id="ConnectionForm" method="post" action="/saas/app/connection.do" autocomplete="new-password">
+                <table id="Connection" class="InfForm" style="border-collapse:collapse; padding:0">
+                    <tbody></tbody></table>
+                <input type="hidden" name="actionMethod" id="ConnectionForm_actionMethod" value="">
+                <input type="hidden" name="orgId" id="ConnectionForm_orgId" value="013QNH">
+                <input type="hidden" name="id" id="ConnectionForm_id" value="013QNH0B00000000000E" class="hiddenAttrsClass">
+                <input type="hidden" name="version" id="ConnectionForm_version" value="14" class="hiddenAttrsClass">
+                <input type="hidden" name="connectionAttrs" id="ConnectionForm_connectionAttrs" value="">
+                <input type="hidden" name="mode" id="ConnectionForm_mode" value="UPDATE" class="hiddenAttrsClass"><input type="hidden" name="csrfToken" value="+yMmD+yVyPeTaIxRQM5Ne1TPIkDpIMi85CRUaUiAN1ifQNWSfoj2h5j5WwhDLt0H">
+                <table id="ccmLegacyViewport" class="InfForm" style="border-collapse: collapse; padding: 0px; display: none;"><tbody><tr class="stdAttrsRowClass"><td class="title" colspan="4">Connection Details</td></tr><tr class="stdAttrsRowClass"><td class="lbl" id="name_Vault_LblTd" style="padding-right:15px;"></td><td class="lbl first" id="name_LblTd"><span title="Connection Name">Connection Name:</span><span id="name_rqdSpan" class="InfRqd">*</span></td><td id="conName_ValTd" class="val icn first" colspan="3" style="width:100%"><input name="conName" id="conName" class="text textsmall" type="text" maxlength="100"></td></tr><tr class="stdAttrsRowClass"><td class="lbl" id="description_Vault_LblTd" style="padding-right:15px;"></td><td class="lbl" id="description_LblTd"><span title="Description">Description:</span></td><td id="conDescription_ValTd" class="val icn" colspan="3"><input name="conDescription" id="conDescription" class="text textsmall" type="text" maxlength="4000"></td></tr><tr class="stdAttrsRowClass"><td class="lbl" id="type_Vault_LblTd" style="padding-right:15px;"></td><td class="lbl" id="type_LblTd"><span title="Type">Type:</span><span id="type_rqdSpan" class="InfRqd">*</span>&nbsp;</td><td id="conType_ValTd" class="val icn" colspan="3"><select name="conType" id="conType" class="text textsmall"><option value="" disabled="">Select…</option><option value="Pinecone Vector DB" data-connlabel="Pinecone Vector DB">Pinecone Vector DB</option><option value="Adabas" data-connlabel="Adabas">Adabas</option><option value="Adabas CDC" data-connlabel="Adabas CDC">Adabas CDC</option><option value="Adaptive Insights" data-connlabel="Adaptive Insights">Adaptive Insights</option><option value="Adobe Analytics Mass Ingestion" data-connlabel="Adobe Analytics Mass Ingestion">Adobe Analytics Mass Ingestion</option><option value="ADSOv1" data-connlabel="ADSOv1">ADSOv1 (Informatica Cloud)</option><option value="Advanced FTP V2" data-connlabel="Advanced FTP V2">Advanced FTP V2</option><option value="Advanced FTPS V2" data-connlabel="Advanced FTPS V2">Advanced FTPS V2</option><option value="Advanced SFTP V2" data-connlabel="Advanced SFTP V2">Advanced SFTP V2</option><option value="Amazon Athena" data-connlabel="Amazon Athena">Amazon Athena</option><option value="Aurora" data-connlabel="Amazon Aurora">Amazon Aurora</option><option value="Amazon DynamoDB V2" data-connlabel="Amazon DynamoDB V2">Amazon DynamoDB V2 (Informatica Cloud)</option><option value="Amazon Kinesis" data-connlabel="Amazon Kinesis">Amazon Kinesis</option><option value="Amazon Redshift v2" data-connlabel="Amazon Redshift v2">Amazon Redshift v2</option><option value="Amazon S3 v2" data-connlabel="Amazon S3 v2">Amazon S3 v2</option><option value="AmazonRedshift" data-connlabel="AmazonRedshift">AmazonRedshift</option><option value="AMQP" data-connlabel="AMQP">AMQP</option><option value="Arrow" data-connlabel="Arrow">Arrow</option><option value="AS2" data-connlabel="AS2">AS2</option><option value="Azure Blob" data-connlabel="Azure Blob">Azure Blob</option><option value="Azure Data Lake" data-connlabel="Azure Data Lake">Azure Data Lake</option><option value="Azure DW Database Ingestion" data-connlabel="Azure DW Database Ingestion">Azure DW Database Ingestion</option><option value="Azure EventHub" data-connlabel="Azure EventHub">Azure EventHub (Informatica Cloud)</option><option value="B2B EDI Gateway" data-connlabel="B2B EDI Gateway">B2B EDI Gateway (Informatica Cloud)</option><option value="B2B EDI Gateway Endpoint" data-connlabel="B2B EDI Gateway Endpoint">B2B EDI Gateway Endpoint (Informatica Cloud)</option><option value="Box" data-connlabel="Box">Box</option><option value="Cassandra V2" data-connlabel="Cassandra V2">Cassandra V2 (Informatica Cloud)</option><option value="Cloud Integration Hub" data-connlabel="Cloud Integration Hub">Cloud Integration Hub (Informatica Cloud)</option><option value="Coupa" data-connlabel="Coupa">Coupa</option><option value="Coupa V2" data-connlabel="Coupa V2">Coupa V2</option><option value="Cvent" data-connlabel="Cvent">Cvent</option><option value="Databricks Delta" data-connlabel="Databricks">Databricks</option><option value="Datacom" data-connlabel="Datacom">Datacom</option><option value="Datacom CDC" data-connlabel="Datacom CDC">Datacom CDC</option><option value="Db2 Data Map" data-connlabel="Db2 Data Map">Db2 Data Map</option><option value="Db2 for i" data-connlabel="Db2 for i">Db2 for i</option><option value="Db2 for i CDC" data-connlabel="Db2 for i CDC">Db2 for i CDC</option><option value="Db2 for LUW CDC" data-connlabel="Db2 for LUW CDC">Db2 for LUW CDC</option><option value="Db2 for LUW Database Ingestion" data-connlabel="Db2 for LUW Database Ingestion">Db2 for LUW Database Ingestion (Informatica Cloud)</option><option value="Db2 for zOS" data-connlabel="Db2 for zOS">Db2 for zOS</option><option value="Db2 for zOS Bulk Load" data-connlabel="Db2 for zOS Bulk Load">Db2 for zOS Bulk Load</option><option value="Db2 for zOS CDC" data-connlabel="Db2 for zOS CDC">Db2 for zOS CDC</option><option value="DB2 zOS Database Ingestion" data-connlabel="DB2 for zOS Database Ingestion">DB2 for zOS Database Ingestion (Informatica Cloud)</option><option value="Db2 for zOS Image Copy" data-connlabel="Db2 for zOS Image Copy">Db2 for zOS Image Copy</option><option value="Db2 for zOS Unload File" data-connlabel="Db2 for zOS Unload File">Db2 for zOS Unload File</option><option value="DB2 i5OS Database Ingestion" data-connlabel="DB2 i5OS Database Ingestion">DB2 i5OS Database Ingestion (Informatica Cloud)</option><option value="Db2 Warehouse on Cloud" data-connlabel="Db2 Warehouse on Cloud">Db2 Warehouse on Cloud</option><option value="Elasticsearch" data-connlabel="Elasticsearch">Elasticsearch (Informatica Cloud)</option><option value="Eloqua-Bulk API" data-connlabel="Eloqua-Bulk API">Eloqua-Bulk API</option><option value="FileIO" data-connlabel="FileIO">FileIO</option><option value="FileProcessor" data-connlabel="FileProcessor">FileProcessor</option><option value="CSVFile">Flat File</option><option value="FTP">FTP/SFTP</option><option value="Google Analytics" data-connlabel="Google Analytics">Google Analytics</option><option value="Google Analytics Mass Ingestion" data-connlabel="Google Analytics Mass Ingestion">Google Analytics Mass Ingestion</option><option value="Google Big Query V2" data-connlabel="Google BigQuery V2">Google BigQuery V2</option><option value="Google Cloud Spanner" data-connlabel="Google Cloud Spanner">Google Cloud Spanner</option><option value="Google Cloud Storage V2" data-connlabel="Google Cloud Storage V2">Google Cloud Storage V2</option><option value="Google PubSub" data-connlabel="Google PubSub">Google PubSub (Informatica Cloud)</option><option value="GoogleDrive" data-connlabel="GoogleDrive">GoogleDrive</option><option value="Hadoop Files V2" data-connlabel="Hadoop Files V2">Hadoop Files V2</option><option value="Hive Connector" data-connlabel="Hive Connector">Hive Connector</option><option value="IDMS" data-connlabel="IDMS">IDMS</option><option value="IDMS CDC" data-connlabel="IDMS CDC">IDMS CDC</option><option value="IMS" data-connlabel="IMS">IMS</option><option value="IMS CDC" data-connlabel="IMS CDC">IMS CDC</option><option value="JD Edwards Enterprise One" data-connlabel="JD Edwards Enterprise One">JD Edwards Enterprise One</option><option value="JDBC_IC" data-connlabel="JDBC_IC">JDBC_IC</option><option value="JDBCV2" data-connlabel="JDBCV2">JDBCV2 (Informatica Cloud)</option><option value="Jira" data-connlabel="Jira">Jira</option><option value="Jira Cloud" data-connlabel="Jira Cloud">Jira Cloud</option><option value="JMS" data-connlabel="JMS">JMS</option><option value="Kafka" data-connlabel="Kafka">Kafka</option><option value="LDAP" data-connlabel="LDAP">LDAP</option><option value="Mailchimp" data-connlabel="Mailchimp">Mailchimp</option><option value="Marketo" data-connlabel="Marketo">Marketo</option><option value="Marketo V3" data-connlabel="Marketo V3">Marketo V3</option><option value="Microsoft Azure Blob Storage V3" data-connlabel="Microsoft Azure Blob Storage V3">Microsoft Azure Blob Storage V3</option><option value="Microsoft Azure Cosmos DB SQL API" data-connlabel="Microsoft Azure Cosmos DB SQL API">Microsoft Azure Cosmos DB SQL API</option><option value="Microsoft Azure Data Lake Store V3" data-connlabel="Microsoft Azure Data Lake Storage Gen1 V3">Microsoft Azure Data Lake Storage Gen1 V3</option><option value="Azure Data Lake Store Gen2" data-connlabel="Microsoft Azure Data Lake Storage Gen2">Microsoft Azure Data Lake Storage Gen2</option><option value="Microsoft Azure Synapse Analytics Database Ingestion" data-connlabel="Microsoft Azure Synapse Analytics Database Ingestion">Microsoft Azure Synapse Analytics Database Ingestion</option><option value="Microsoft Azure SQL Data Warehouse V3" data-connlabel="Microsoft Azure Synapse SQL">Microsoft Azure Synapse SQL</option><option value="CDM Folders V2" data-connlabel="Microsoft CDM Folders V2">Microsoft CDM Folders V2</option><option value="Microsoft Dynamics 365 for Operations" data-connlabel="Microsoft Dynamics 365 for Operations">Microsoft Dynamics 365 for Operations</option><option value="Microsoft Dynamics 365 for Sales" data-connlabel="Microsoft Dynamics 365 for Sales">Microsoft Dynamics 365 for Sales</option><option value="Microsoft Dynamics 365 Mass Ingestion" data-connlabel="Microsoft Dynamics 365 Mass Ingestion">Microsoft Dynamics 365 Mass Ingestion</option><option value="MSD">Microsoft Dynamics CRM</option><option value="Microsoft Excel" data-connlabel="Microsoft Excel">Microsoft Excel</option><option value="Microsoft OneLake" data-connlabel="Microsoft Fabric OneLake">Microsoft Fabric OneLake</option><option value="Microsoft Power BI" data-connlabel="Microsoft Power BI">Microsoft Power BI</option><option value="MongoDB Mass Ingestion" data-connlabel="MongoDB Mass Ingestion">MongoDB Mass Ingestion</option><option value="MongoDB v2" data-connlabel="MongoDB v2">MongoDB v2 (Informatica Cloud)</option><option value="MQTT" data-connlabel="MQTT">MQTT</option><option value="MS_ACCESS">MS Access</option><option value="MySQL">MySQL</option><option value="MySQL CDC" data-connlabel="MySQL CDC">MySQL CDC</option><option value="Netezza" data-connlabel="Netezza">Netezza</option><option value="Netsuite Mass Ingestion" data-connlabel="Netsuite Mass Ingestion">Netsuite Mass Ingestion</option><option value="NetSuite V2" data-connlabel="NetSuite RESTlet V2">NetSuite RESTlet V2</option><option value="OData" data-connlabel="OData">OData</option><option value="ODBC">ODBC</option><option value="opcua" data-connlabel="opcua">opcua (Informatica Cloud)</option><option value="Oracle">Oracle</option><option value="Oracle CDC" data-connlabel="Oracle CDC">Oracle CDC</option><option value="Oracle CDC V2" data-connlabel="Oracle CDC V2">Oracle CDC V2</option><option value="Oracle Cloud Object Storage" data-connlabel="Oracle Cloud Object Storage">Oracle Cloud Object Storage (Informatica)</option><option value="Oracle Database Ingestion" data-connlabel="Oracle Database Ingestion">Oracle Database Ingestion</option><option value="Oracle Financials Cloud V1" data-connlabel="Oracle Financials Cloud V1">Oracle Financials Cloud V1</option><option value="Oracle Fusion Cloud Mass Ingestion" data-connlabel="Oracle Fusion Cloud Mass Ingestion">Oracle Fusion Cloud Mass Ingestion</option><option value="NetSuite" data-connlabel="Oracle NetSuite">Oracle NetSuite</option><option value="PostgreSQL" data-connlabel="PostgreSQL">PostgreSQL (Informatica Cloud)</option><option value="PostgreSQL CDC" data-connlabel="PostgreSQL CDC">PostgreSQL CDC</option><option value="Quickbooks V2" data-connlabel="Quickbooks V2">Quickbooks V2</option><option value="Redis" data-connlabel="Redis">Redis (Informatica Cloud)</option><option value="REST V2" data-connlabel="REST V2">REST V2</option><option value="REST V3" data-connlabel="REST V3">REST V3</option><option value="Salesforce" data-connlabel="Salesforce">Salesforce</option><option value="Salesforce Application Ingestion" data-connlabel="Salesforce Application Ingestion">Salesforce Application Ingestion (Informatica Cloud)</option><option value="Salesforce Commerce Cloud" data-connlabel="Salesforce Commerce Cloud">Salesforce Commerce Cloud</option><option value="Salesforce Marketing Cloud" data-connlabel="Salesforce Marketing Cloud">Salesforce Marketing Cloud</option><option value="Salesforce Mass Ingestion" data-connlabel="Salesforce Mass Ingestion">Salesforce Mass Ingestion</option><option value="SAP">SAP</option><option value="SAP BW Connector" data-connlabel="SAP BW Connector">SAP BW Connector</option><option value="SAP HANA" data-connlabel="SAP HANA">SAP HANA</option><option value="SAP HANA CDC" data-connlabel="SAP HANA CDC">SAP HANA CDC</option><option value="SAP HANA Database Ingestion" data-connlabel="SAP HANA Database Ingestion">SAP HANA Database Ingestion (Informatica Cloud)</option><option value="SAP Mass Ingestion" data-connlabel="SAP Mass Ingestion">SAP Mass Ingestion (Informatica Cloud)</option><option value="SAP ODP" data-connlabel="SAP ODP">SAP ODP</option><option value="SAPTableConnector" data-connlabel="SAPTableConnector">SAPTableConnector</option><option value="Sequential File" data-connlabel="Sequential File">Sequential File</option><option value="ServiceNow" data-connlabel="ServiceNow">ServiceNow</option><option value="ServiceNow Mass Ingestion" data-connlabel="ServiceNow Mass Ingestion">ServiceNow Mass Ingestion</option><option value="Sharepoint" data-connlabel="Sharepoint">Sharepoint</option><option value="Sharepoint Online" data-connlabel="Sharepoint Online">Sharepoint Online</option><option value="Shopify" data-connlabel="Shopify">Shopify</option><option value="Snowflake Cloud Data Warehouse" data-connlabel="Snowflake Cloud Data Warehouse">Snowflake Cloud Data Warehouse</option><option value="Snowflake Cloud Data Warehouse V2" data-connlabel="Snowflake Data Cloud">Snowflake Data Cloud</option><option value="SqlServer">SQL Server</option><option value="SQL Server CDC" data-connlabel="SQL Server CDC">SQL Server CDC</option><option value="Stripe" data-connlabel="Stripe">Stripe</option><option value="SuccessFactors LMS" data-connlabel="SuccessFactors LMS">SuccessFactors LMS</option><option value="SuccessFactors OData" data-connlabel="SuccessFactors OData">SuccessFactors OData</option><option value="SurveyMonkey" data-connlabel="SurveyMonkey">SurveyMonkey</option><option value="Tableau" data-connlabel="Tableau">Tableau</option><option value="Tableau V2" data-connlabel="Tableau V2">Tableau V2</option><option value="Tableau V3" data-connlabel="Tableau V3">Tableau V3</option><option value="Teradata" data-connlabel="Teradata">Teradata</option><option value="VSAM" data-connlabel="VSAM">VSAM</option><option value="VSAM CDC" data-connlabel="VSAM CDC">VSAM CDC</option><option value="WebServicesConsumer">Web Service</option><option value="Workday" data-connlabel="Workday">Workday</option><option value="Workday Mass Ingestion" data-connlabel="Workday Mass Ingestion">Workday Mass Ingestion</option><option value="WSConsumer" data-connlabel="WSConsumer">WSConsumer</option><option value="Xactly" data-connlabel="Xactly">Xactly</option><option value="Zendesk Mass Ingestion" data-connlabel="Zendesk Mass Ingestion">Zendesk Mass Ingestion (Informatica Cloud)</option><option value="Zendesk V2" data-connlabel="Zendesk V2">Zendesk V2 (Informatica)</option><option value="ZuoraAQuA" data-connlabel="ZuoraAQuA">ZuoraAQuA</option></select></td></tr><tr class="dynAttrsRowClass"><td class="lbl" id="agentGroupId_Vault_LblTd" style="padding-right:15px;"></td><td class="lbl" id="agentGroupId_LblTd"><span title="Runtime Environment">Runtime Environment:</span><span id="agentGroupId_rqdSpan" class="InfRqd">*</span>&nbsp;</td><td id="agentGroupId_ValTd" class="val icn" colspan="3"><select name="toolkitAttributes" id="agentGroupId" class="text textsmall"><option value="" disabled="">Select…</option><option value="025000000000002">Informatica Cloud Hosted Agent</option><option value="013QNH250000000007SN">__iics-setup</option><option value="013QNH250000000007SP">__PrivateLinkAgentLinux</option><option value="013QNH250000000007SQ">__PrivateLinkAgentWindows</option><option value="013QNH250000000007YF">_A_rashmiwindows</option><option value="013QNH25000000000002">_AG_Geet</option><option value="013QNH25000000000023">_APriyanshiSongara</option><option value="013QNH250000000007UU">_DG_Linux</option><option value="013QNH250000000007UL">_Dinesh_Linux</option><option value="013QNH250000000007VA">_EC2_Perf</option><option value="013QNH250000000007SD">_Geet_Laptop</option><option value="013QNH2500000000000G">_Geetha_WinVM</option><option value="013QNH250000000007UG">_jkashyap_pc</option><option value="013QNH250000000007UK">_Padmini_Linux</option><option value="013QNH250000000007V6">_Ramya_Lin</option><option value="013QNH250000000007U5">_Ramya_Linux</option><option value="013QNH250000000007SW">_shruthis</option><option value="013QNH2500000000001P">00 mp_docker_1</option><option value="013QNH2500000000001N">000_MP_Laptop</option><option value="013QNH250000000007UO">210da099583f</option><option value="013QNH250000000007SS">646f74a0b072</option><option value="013QNH250000000007XD">97daef803b6b</option><option value="013QNH2500000000000U">a8f1439bbbd4</option><option value="013QNH250000000007VO">aa_eyup</option><option value="013QNH250000000007TB">aa_saloni_laptop</option><option value="013QNH250000000007TV">aa_saloni_winVM</option><option value="013QNH250000000007WS">adityapc</option><option value="013QNH250000000007T0">aegorova_RUW1PF15TKXN</option><option value="013QNH250000000007W3">AGENT_CRRT_12</option><option value="013QNH250000000007W2">AGENT_CRRT123</option><option value="013QNH250000000007UW">ahodgson_rel_runtime_env</option><option value="013QNH2500000000001K">akraj_dbmi1</option><option value="013QNH2500000000002E">appmi_docker_vm</option><option value="013QNH250000000007XX">asvmbredhat0101.informatica.com</option><option value="013QNH250000000007SO">BhagapanINWPF1KS6DQ-AAD</option><option value="013QNH250000000007VT">Bristow</option><option value="013QNH25000000000004">Chiru_laptop</option><option value="013QNH2500000000000S">Chiru_VM</option><option value="013QNH250000000007UQ">Common_windows_agent</option><option value="013QNH250000000007X9">CrossAgent</option><option value="013QNH250000000007UJ">d18d0ef54c61</option><option value="013QNH250000000007XR">db2idb2zautomation.informatica.com</option><option value="013QNH250000000007TS">dbmiagentvm</option><option value="013QNH250000000007SB">dd</option><option value="013QNH250000000007X6">DELL</option><option value="013QNH250000000007T9">DESKTOP-C7U3U14</option><option value="013QNH250000000007WQ">DPT_Local</option><option value="013QNH250000000007WD">dtambe_pc</option><option value="013QNH250000000007VI">emazurestagingrh</option><option value="013QNH25000000000022">EMCANADAPOD101</option><option value="013QNH25000000000012">EMebfredhat01-0</option><option value="013QNH25000000000015">EMebfrh0101</option><option value="013QNH25000000000021">empreviewrhel01.informatica.com</option><option value="013QNH2500000000001I">EMQAMLPOD1WIN01</option><option value="013QNH2500000000000W">EMQAMRELPOD01</option><option value="013QNH250000000007UP">EMQAMRELRHPOD01</option><option value="013QNH2500000000001R">EMRELPOD101</option><option value="013QNH250000000007S7">emsqldb1</option><option value="013QNH250000000007S8">emsqldb5</option><option value="013QNH250000000007XS">emvdb2auto01</option><option value="013QNH2500000000001T">eveselov.linux154</option><option value="013QNH250000000007SU">f72a6982f41d</option><option value="013QNH250000000007UN">ganesh_pc</option><option value="013QNH25000000000019">GB-MBASAPPA</option><option value="013QNH250000000007Y2">GBWPF37TPLT-AAD</option><option value="013QNH250000000007SH">GBWPF3E474F-AAD</option><option value="013QNH250000000007UR">Geet_Linux</option><option value="013QNH2500000000000Q">ILabs_invw19pam25</option><option value="013QNH250000000007UE">ilabsmuskan</option><option value="013QNH250000000007X7">INHYDKUMARPRAD9</option><option value="013QNH250000000007TW">INnativesus1201</option><option value="013QNH250000000007S9">INpamnative01</option><option value="013QNH250000000007TM">inrh74conativ01</option><option value="013QNH2500000000001D">INsiubtu16qa01</option><option value="013QNH250000000007VN">invabhisharma01</option><option value="013QNH250000000007V9">invappmi05.informatica.com</option><option value="013QNH250000000007XI">invb2bfmiperf01.informatica.com</option><option value="013QNH250000000007X8">invdbmiwin2201</option><option value="013QNH250000000007WI">invlinpgs1501.informatica.com</option><option value="013QNH250000000007XN">invmftsaas01</option><option value="013QNH250000000007X1">invoracle01</option><option value="013QNH2500000000001W">invr79pam78</option><option value="013QNH250000000007T2">invr83pam38</option><option value="013QNH250000000007WL">invrdwin6401</option><option value="013QNH250000000007YB">invrh87appmi02</option><option value="013QNH2500000000001X">invs12reglab01</option><option value="013QNH250000000007XH">invu18pam12</option><option value="013QNH250000000007XQ">invu20pam02</option><option value="013QNH250000000007X3">invubuntu220401</option><option value="013QNH2500000000001U">invw19dst02</option><option value="013QNH2500000000000K">invw19pam15</option><option value="013QNH250000000007UM">invw19pam21</option><option value="013QNH25000000000029">invw19pwx02</option><option value="013QNH250000000007VF">invyaminirh01.informatica.com</option><option value="013QNH2500000000001L">INW1PF0VJPER</option><option value="013QNH250000000007XT">INW7L0SSV3-AAD</option><option value="013QNH250000000007TF">INWPF14DJGX-AAD</option><option value="013QNH2500000000001C">INWPF1BWEQY-AAD</option><option value="013QNH250000000007TC">INWPF1FB25A-AAD</option><option value="013QNH250000000007SJ">INWPF1KS6DQ-AAD</option><option value="013QNH250000000007XL">INWPF1WYY3C-AAD</option><option value="013QNH2500000000000D">INWPF23SXLS-AAD</option><option value="013QNH25000000000018">INWPF2F1WGN-AAD</option><option value="013QNH250000000007T3">INWPF2QT6DD-AAD</option><option value="013QNH250000000007TT">INWPF3M0WGV-AAD_shraddha</option><option value="013QNH250000000007YI">ip-10-0-10-86.us-west-2.compute.internal</option><option value="013QNH25000000000026">ip-10-21-81-49.us-west-1.compute.internal</option><option value="013QNH250000000007XB">ip-172-31-16-52.eu-north-1.compute.internal</option><option value="013QNH250000000007TE">jrathore_laptop</option><option value="013QNH250000000007TZ">karthic_win10_d</option><option value="013QNH250000000007TY">kmarcu1_group</option><option value="013QNH2500000000001J">largewin2019</option><option value="013QNH250000000007SK">linpostgress.informatica.com</option><option value="013QNH250000000007VR">MALPAK_AG</option><option value="013QNH250000000007Y3">Mbisht_INWPF34DLX5-AAD</option><option value="013QNH250000000007UD">mbisht_windows</option><option value="013QNH250000000007ST">mhcentosqa01.informatica.com</option><option value="013QNH2500000000001E">mhlxr74qa01.informatica.com</option><option value="013QNH25000000000016">mhredhat4.informatica.com</option><option value="013QNH250000000007W7">mhrrh8601.informatica.com</option><option value="013QNH25000000000010">MHV19PWXQA01</option><option value="013QNH250000000007U2">MHV19PWXQA02</option><option value="013QNH250000000007WF">ora21cwin22</option><option value="013QNH25000000000025">Org - 6sx0UHhl0fNbZqvIX5VDeJ Unknown host</option><option value="013QNH2500000000000L">Padmini_laptop</option><option value="013QNH250000000007T4">PL_DOCKER_65288b89c2f0</option><option value="013QNH250000000007XA">PL_LAPTOP_DOCKER2</option><option value="013QNH250000000007VW">pmchugh</option><option value="013QNH2500000000002F">prashanth01</option><option value="013QNH250000000007WE">projectxdomain.informatica.com</option><option value="013QNH250000000007SY">Ramya_windows</option><option value="013QNH2500000000000C">rdhuvad_dbmi2</option><option value="013QNH250000000007S6">rel_agentGroup</option><option value="013QNH250000000007Y0">REL_LINUX</option><option value="013QNH250000000007VB">rh8pcnative1.informatica.com</option><option value="013QNH250000000007T7">rklime-VirtualBox</option><option value="013QNH250000000007V1">RPS_Laptop</option><option value="013QNH2500000000001S">RPS-Docker-Rel-1</option><option value="013QNH250000000007SM">RUW1PF15TNCU</option><option value="013QNH250000000007U1">sathish-agent-group</option><option value="013QNH250000000007SE">sathish-laptop-group</option><option value="013QNH250000000007V8">SBP_laptop</option><option value="013QNH25000000000027">SBSM_QAPOD</option><option value="013QNH250000000007VU">smalwe-rel-test-env</option><option value="013QNH250000000007WT">Snowflake Integrator</option><option value="013QNH250000000007TN">Soumay</option><option value="013QNH2500000000000R">Soumay_INFA</option><option value="013QNH250000000007TI">sree</option><option value="013QNH250000000007UF">Sreenitha</option><option value="013QNH2500000000000A">SS_Laptop</option><option value="013QNH250000000007TA">stephen_laptop_rel</option><option value="013QNH250000000007WJ">TS_cloudagent2</option><option value="013QNH25000000000013">ukvlxrh74rnd06</option><option value="013QNH250000000007XK">Umar</option><option value="013QNH2500000000001H">USW1PF18WSG6</option><option value="013QNH250000000007WU">USWPF2J5S6H-AAD</option><option value="013QNH2500000000000O">USWPF2R1VJK-AAD</option><option value="013QNH250000000007W5">USWPF2T83WW-AAD</option><option value="013QNH250000000007TH">USWPF30AQ27-AAD</option><option value="013QNH2500000000002A">USWPF3HZNTE-AAD</option><option value="013QNH250000000007SV">USWPF3JBPZS-AAD</option></select></td></tr></tbody></table></form><div id="ccmViewport"><div data-reactroot="" style="padding-top: 20px;"><table class="InfForm" style="border-collapse: collapse; padding: 0px;"><div style="display: table-row-group;"><div style="display: table-row-group;"><tr class="stdAttrsRowClass"><td class="title vspace" colspan="3"><!-- react-text: 8 -->Connection Details<!-- /react-text --><!-- react-empty: 9 --></td></tr><tr class="stdAttrsRowClass"><td class="lbl first"></td><td class="lbl first"><!-- react-text: 13 -->Connection Name:<!-- /react-text --><span class="InfRqd">*</span><!-- react-empty: 15 --></td><td class="val icn first"><input type="text" class="text textsmall" id="name" autocomplete="new-password" value="AIN_S3"></td></tr><tr class="stdAttrsRowClass"><td class="lbl first"></td><td class="lbl first"><!-- react-text: 21 -->Description:<!-- /react-text --><!-- react-empty: 22 --><!-- react-empty: 23 --></td><td class="val icn first"><input type="text" class="text textsmall" id="description" autocomplete="new-password"></td></tr><tr class="stdAttrsRowClass"><td class="lbl first"></td><td class="lbl first"><!-- react-text: 29 -->Type:<!-- /react-text --><span class="InfRqd">*</span></td><td class="val icn first"><select id="connType" class="text textsmall"><option value="-1" disabled="">Select…</option><option value="Pinecone Vector DB">Pinecone Vector DB</option><option value="Adabas CDC">Adabas CDC</option><option value="Adaptive Insights">Adaptive Insights</option><option value="Adobe Analytics Mass Ingestion">Adobe Analytics Mass Ingestion</option><option value="ADSOv1">ADSOv1 (Informatica Cloud)</option><option value="Advanced FTP V2">Advanced FTP V2</option><option value="Advanced FTPS V2">Advanced FTPS V2</option><option value="Advanced SFTP V2">Advanced SFTP V2</option><option value="Amazon Athena">Amazon Athena</option><option value="Aurora">Amazon Aurora</option><option value="Amazon DynamoDB V2">Amazon DynamoDB V2 (Informatica Cloud)</option><option value="Amazon Kinesis">Amazon Kinesis</option><option value="Amazon Redshift v2">Amazon Redshift v2</option><option value="Amazon S3 v2">Amazon S3 v2</option><option value="AmazonRedshift">AmazonRedshift</option><option value="AMQP">AMQP</option><option value="Arrow">Arrow</option><option value="AS2">AS2</option><option value="Azure Blob">Azure Blob</option><option value="Azure Data Lake">Azure Data Lake</option><option value="Azure DW Database Ingestion">Azure DW Database Ingestion</option><option value="Azure EventHub">Azure EventHub (Informatica Cloud)</option><option value="B2B EDI Gateway">B2B EDI Gateway (Informatica Cloud)</option><option value="B2B EDI Gateway Endpoint">B2B EDI Gateway Endpoint (Informatica Cloud)</option><option value="Box">Box</option><option value="Cassandra V2">Cassandra V2 (Informatica Cloud)</option><option value="Cloud Integration Hub">Cloud Integration Hub (Informatica Cloud)</option><option value="Coupa">Coupa</option><option value="Coupa V2">Coupa V2</option><option value="Cvent">Cvent</option><option value="Databricks Delta">Databricks</option><option value="Datacom">Datacom</option><option value="Datacom CDC">Datacom CDC</option><option value="Db2 Data Map">Db2 Data Map</option><option value="Db2 for i">Db2 for i</option><option value="Db2 for i CDC">Db2 for i CDC</option><option value="Db2 for LUW CDC">Db2 for LUW CDC</option><option value="Db2 for LUW Database Ingestion">Db2 for LUW Database Ingestion (Informatica Cloud)</option><option value="Db2 for zOS">Db2 for zOS</option><option value="Db2 for zOS Bulk Load">Db2 for zOS Bulk Load</option><option value="Db2 for zOS CDC">Db2 for zOS CDC</option><option value="DB2 zOS Database Ingestion">DB2 for zOS Database Ingestion (Informatica Cloud)</option><option value="Db2 for zOS Image Copy">Db2 for zOS Image Copy</option><option value="Db2 for zOS Unload File">Db2 for zOS Unload File</option><option value="DB2 i5OS Database Ingestion">DB2 i5OS Database Ingestion (Informatica Cloud)</option><option value="Db2 Warehouse on Cloud">Db2 Warehouse on Cloud</option><option value="Elasticsearch">Elasticsearch (Informatica Cloud)</option><option value="Eloqua-Bulk API">Eloqua-Bulk API</option><option value="FileIO">FileIO</option><option value="FileProcessor">FileProcessor</option><option value="CSVFile">Flat File</option><option value="FTP">FTP/SFTP</option><option value="Google Analytics">Google Analytics</option><option value="Google Analytics Mass Ingestion">Google Analytics Mass Ingestion</option><option value="Google Big Query V2">Google BigQuery V2</option><option value="Google Cloud Spanner">Google Cloud Spanner</option><option value="Google Cloud Storage V2">Google Cloud Storage V2</option><option value="Google PubSub">Google PubSub (Informatica Cloud)</option><option value="GoogleDrive">GoogleDrive</option><option value="Hadoop Files V2">Hadoop Files V2</option><option value="Hive Connector">Hive Connector</option><option value="IDMS">IDMS</option><option value="IDMS CDC">IDMS CDC</option><option value="IMS">IMS</option><option value="IMS CDC">IMS CDC</option><option value="JD Edwards Enterprise One">JD Edwards Enterprise One</option><option value="JDBC_IC">JDBC_IC</option><option value="JDBCV2">JDBCV2 (Informatica Cloud)</option><option value="Jira">Jira</option><option value="Jira Cloud">Jira Cloud</option><option value="JMS">JMS</option><option value="Kafka">Kafka</option><option value="LDAP">LDAP</option><option value="Mailchimp">Mailchimp</option><option value="Marketo">Marketo</option><option value="Marketo V3">Marketo V3</option><option value="Microsoft Azure Blob Storage V3">Microsoft Azure Blob Storage V3</option><option value="Microsoft Azure Cosmos DB SQL API">Microsoft Azure Cosmos DB SQL API</option><option value="Microsoft Azure Data Lake Store V3">Microsoft Azure Data Lake Storage Gen1 V3</option><option value="Azure Data Lake Store Gen2">Microsoft Azure Data Lake Storage Gen2</option><option value="Microsoft Azure Synapse Analytics Database Ingestion">Microsoft Azure Synapse Analytics Database Ingestion</option><option value="Microsoft Azure SQL Data Warehouse V3">Microsoft Azure Synapse SQL</option><option value="CDM Folders V2">Microsoft CDM Folders V2</option><option value="Microsoft Dynamics 365 for Operations">Microsoft Dynamics 365 for Operations</option><option value="Microsoft Dynamics 365 for Sales">Microsoft Dynamics 365 for Sales</option><option value="Microsoft Dynamics 365 Mass Ingestion">Microsoft Dynamics 365 Mass Ingestion</option><option value="MSD">Microsoft Dynamics CRM</option><option value="Microsoft Excel">Microsoft Excel</option><option value="Microsoft OneLake">Microsoft Fabric OneLake</option><option value="Microsoft Power BI">Microsoft Power BI</option><option value="MongoDB Mass Ingestion">MongoDB Mass Ingestion</option><option value="MongoDB v2">MongoDB v2 (Informatica Cloud)</option><option value="MQTT">MQTT</option><option value="MS_ACCESS">MS Access</option><option value="MySQL">MySQL</option><option value="MySQL CDC">MySQL CDC</option><option value="Netezza">Netezza</option><option value="Netsuite Mass Ingestion">Netsuite Mass Ingestion</option><option value="NetSuite V2">NetSuite RESTlet V2</option><option value="OData">OData</option><option value="ODBC">ODBC</option><option value="opcua">opcua (Informatica Cloud)</option><option value="Oracle">Oracle</option><option value="Oracle CDC">Oracle CDC</option><option value="Oracle CDC V2">Oracle CDC V2</option><option value="Oracle Cloud Object Storage">Oracle Cloud Object Storage (Informatica)</option><option value="Oracle Database Ingestion">Oracle Database Ingestion</option><option value="Oracle Financials Cloud V1">Oracle Financials Cloud V1</option><option value="Oracle Fusion Cloud Mass Ingestion">Oracle Fusion Cloud Mass Ingestion</option><option value="NetSuite">Oracle NetSuite</option><option value="PostgreSQL">PostgreSQL (Informatica Cloud)</option><option value="PostgreSQL CDC">PostgreSQL CDC</option><option value="Quickbooks V2">Quickbooks V2</option><option value="Redis">Redis (Informatica Cloud)</option><option value="REST V2">REST V2</option><option value="REST V3">REST V3</option><option value="Salesforce">Salesforce</option><option value="Salesforce Application Ingestion">Salesforce Application Ingestion (Informatica Cloud)</option><option value="Salesforce Commerce Cloud">Salesforce Commerce Cloud</option><option value="Salesforce Marketing Cloud">Salesforce Marketing Cloud</option><option value="Salesforce Mass Ingestion">Salesforce Mass Ingestion</option><option value="SAP">SAP</option><option value="SAP BW Connector">SAP BW Connector</option><option value="SAP HANA">SAP HANA</option><option value="SAP HANA CDC">SAP HANA CDC</option><option value="SAP HANA Database Ingestion">SAP HANA Database Ingestion (Informatica Cloud)</option><option value="SAP Mass Ingestion">SAP Mass Ingestion (Informatica Cloud)</option><option value="SAP ODP">SAP ODP</option><option value="SAPTableConnector">SAPTableConnector</option><option value="Sequential File">Sequential File</option><option value="ServiceNow">ServiceNow</option><option value="ServiceNow Mass Ingestion">ServiceNow Mass Ingestion</option><option value="Sharepoint">Sharepoint</option><option value="Sharepoint Online">Sharepoint Online</option><option value="Shopify">Shopify</option><option value="Snowflake Cloud Data Warehouse">Snowflake Cloud Data Warehouse</option><option value="Snowflake Cloud Data Warehouse V2">Snowflake Data Cloud</option><option value="SqlServer">SQL Server</option><option value="SQL Server CDC">SQL Server CDC</option><option value="Stripe">Stripe</option><option value="SuccessFactors LMS">SuccessFactors LMS</option><option value="SuccessFactors OData">SuccessFactors OData</option><option value="SurveyMonkey">SurveyMonkey</option><option value="Tableau">Tableau</option><option value="Tableau V2">Tableau V2</option><option value="Tableau V3">Tableau V3</option><option value="Teradata">Teradata</option><option value="VSAM">VSAM</option><option value="VSAM CDC">VSAM CDC</option><option value="WebServicesConsumer">Web Service</option><option value="Workday">Workday</option><option value="Workday Mass Ingestion">Workday Mass Ingestion</option><option value="WSConsumer">WSConsumer</option><option value="Xactly">Xactly</option><option value="Zendesk Mass Ingestion">Zendesk Mass Ingestion (Informatica Cloud)</option><option value="Zendesk V2">Zendesk V2 (Informatica)</option><option value="ZuoraAQuA">ZuoraAQuA</option></select></td></tr></div><div style="display: contents;"><div style="display: table-row-group;"><tr class="stdAttrsRowClass"><td class="lbl first"></td><td class="lbl first" data-dynamic="false"><!-- react-text: 197 -->Runtime Environment:<!-- /react-text --><span class="InfRqd">*</span></td><td class="val icn first"><select id="agentGroupId" class="text textsmall"><option value="-1" disabled="">Select…</option><option value="025000000000002">Informatica Cloud Hosted Agent</option><option value="013QNH250000000007SN">__iics-setup</option><option value="013QNH250000000007WG">__invgsvm01.informatica.com</option><option value="013QNH250000000007SP">__PrivateLinkAgentLinux</option><option value="013QNH250000000007SQ">__PrivateLinkAgentWindows</option><option value="013QNH250000000007VP">_0pravakar_vm</option><option value="013QNH250000000007YF">_A_rashmiwindows</option><option value="013QNH25000000000002">_AG_Geet</option><option value="013QNH25000000000023">_APriyanshiSongara</option><option value="013QNH250000000007UU">_DG_Linux</option><option value="013QNH250000000007UZ">_DG_Win</option><option value="013QNH250000000007UL">_Dinesh_Linux</option><option value="013QNH250000000007VA">_EC2_Perf</option><option value="013QNH250000000007SD">_Geet_Laptop</option><option value="013QNH2500000000000G">_Geetha_WinVM</option><option value="013QNH250000000007VM">_gs_sa_1</option><option value="013QNH250000000007Y7">_invcmi02</option><option value="013QNH250000000007XM">_invw19pam14</option><option value="013QNH250000000007UG">_jkashyap_pc</option><option value="013QNH250000000007UC">_Mini_invappmi01</option><option value="013QNH250000000007X4">_muskan_pc</option><option value="013QNH250000000007UK">_Padmini_Linux</option><option value="013QNH25000000000007">_Pruthvi_INWPF2QT3DG-AAD</option><option value="013QNH250000000007V6">_Ramya_Lin</option><option value="013QNH250000000007U5">_Ramya_Linux</option><option value="013QNH250000000007SW">_shruthis</option><option value="013QNH2500000000001P">00 mp_docker_1</option><option value="013QNH250000000007V0">00_Anirudh</option><option value="013QNH2500000000001N">000_MP_Laptop</option><option value="013QNH250000000007T8">174e73f860e5</option><option value="013QNH250000000007UO">210da099583f</option><option value="013QNH250000000007TK">3998057fc41b</option><option value="013QNH250000000007Y6">5143f7d61b74</option><option value="013QNH250000000007SS">646f74a0b072</option><option value="013QNH250000000007UH">79ae8720dd40</option><option value="013QNH250000000007XD">97daef803b6b</option><option value="013QNH250000000007SF">a_karta_invkacentos01.informatica.com</option><option value="013QNH250000000007VH">a6e290f7d18b</option><option value="013QNH2500000000000U">a8f1439bbbd4</option><option value="013QNH250000000007VO">aa_eyup</option><option value="013QNH250000000007TU">aa_mehul</option><option value="013QNH250000000007TB">aa_saloni_laptop</option><option value="013QNH250000000007TV">aa_saloni_winVM</option><option value="013QNH250000000007T6">AAD-W1PF2R1QD8</option><option value="013QNH250000000007WS">adityapc</option><option value="013QNH250000000007T0">aegorova_RUW1PF15TKXN</option><option value="013QNH250000000007W3">AGENT_CRRT_12</option><option value="013QNH250000000007W2">AGENT_CRRT123</option><option value="013QNH25000000000020">AgentGroup</option><option value="013QNH250000000007UX">ahodgson_REL_runtime_2</option><option value="013QNH250000000007UW">ahodgson_rel_runtime_env</option><option value="013QNH2500000000001K">akraj_dbmi1</option><option value="013QNH2500000000002E">appmi_docker_vm</option><option value="013QNH25000000000028">arp_INWPF1PXZ76-AAD</option><option value="013QNH25000000000017">asbhatt_dev</option><option value="013QNH250000000007SZ">asbhatt_laptop</option><option value="013QNH250000000007UV">asbhatt-dev.informatica.com</option><option value="013QNH250000000007XX">asvmbredhat0101.informatica.com</option><option value="013QNH250000000007XC">asvpolarbear01.informatica.com</option><option value="013QNH250000000007YA">asvpolarbear02</option><option value="013QNH250000000007SO">BhagapanINWPF1KS6DQ-AAD</option><option value="013QNH250000000007VT">Bristow</option><option value="013QNH25000000000004">Chiru_laptop</option><option value="013QNH2500000000002C">chiru_new_laptop</option><option value="013QNH2500000000000S">Chiru_VM</option><option value="013QNH250000000007UQ">Common_windows_agent</option><option value="013QNH250000000007X9">CrossAgent</option><option value="013QNH250000000007UJ">d18d0ef54c61</option><option value="013QNH250000000007TR">d4e399854ec1</option><option value="013QNH250000000007TP">d62ce0fa82e5</option><option value="013QNH250000000007XR">db2idb2zautomation.informatica.com</option><option value="013QNH250000000007TS">dbmiagentvm</option><option value="013QNH2500000000001Z">dbmiqaora.informatica.com</option><option value="013QNH250000000007SB">dd</option><option value="013QNH250000000007X6">DELL</option><option value="013QNH250000000007T9">DESKTOP-C7U3U14</option><option value="013QNH250000000007WN">dhuvad-HP-Laptop-15q-ds3xxx</option><option value="013QNH250000000007WQ">DPT_Local</option><option value="013QNH250000000007WD">dtambe_pc</option><option value="013QNH250000000007VI">emazurestagingrh</option><option value="013QNH25000000000022">EMCANADAPOD101</option><option value="013QNH25000000000012">EMebfredhat01-0</option><option value="013QNH25000000000015">EMebfrh0101</option><option value="013QNH25000000000021">empreviewrhel01.informatica.com</option><option value="013QNH2500000000002G">EMpwxsql1901</option><option value="013QNH2500000000001I">EMQAMLPOD1WIN01</option><option value="013QNH2500000000000W">EMQAMRELPOD01</option><option value="013QNH250000000007UP">EMQAMRELRHPOD01</option><option value="013QNH2500000000001R">EMRELPOD101</option><option value="013QNH2500000000001Y">EMShraddha01</option><option value="013QNH250000000007S7">emsqldb1</option><option value="013QNH250000000007S8">emsqldb5</option><option value="013QNH250000000007XS">emvdb2auto01</option><option value="013QNH250000000007YD">emvpatlinux01.informatica.com</option><option value="013QNH2500000000001T">eveselov.linux154</option><option value="013QNH250000000007SU">f72a6982f41d</option><option value="013QNH250000000007UN">ganesh_pc</option><option value="013QNH25000000000019">GB-MBASAPPA</option><option value="013QNH250000000007XY">GBWHGXWSL3-AAD</option><option value="013QNH250000000007VV">GBWPC0JYEZD-AAD</option><option value="013QNH250000000007VZ">GBWPF13WW99-AAD</option><option value="013QNH250000000007XE">GBWPF2LAVX4-AAD</option><option value="013QNH250000000007Y2">GBWPF37TPLT-AAD</option><option value="013QNH250000000007SH">GBWPF3E474F-AAD</option><option value="013QNH250000000007SI">GBWPF3FB6WS-AAD</option><option value="013QNH250000000007UR">Geet_Linux</option><option value="013QNH2500000000000V">govind</option><option value="013QNH250000000007W8">Govind  VM temp</option><option value="013QNH250000000007W1">govind windows vm</option><option value="013QNH2500000000001M">iics-setup</option><option value="013QNH250000000007V2">IlabNbaWin</option><option value="013QNH2500000000000Q">ILabs_invw19pam25</option><option value="013QNH250000000007UE">ilabsmuskan</option><option value="013QNH2500000000000B">inabsendev02</option><option value="013QNH250000000007X7">INHYDKUMARPRAD9</option><option value="013QNH250000000007TW">INnativesus1201</option><option value="013QNH250000000007S9">INpamnative01</option><option value="013QNH250000000007TM">inrh74conativ01</option><option value="013QNH2500000000001D">INsiubtu16qa01</option><option value="013QNH2500000000002B">inv12amp03</option><option value="013QNH250000000007X0">inv19amp3</option><option value="013QNH250000000007VN">invabhisharma01</option><option value="013QNH250000000007X5">invami10</option><option value="013QNH250000000007V9">invappmi05.informatica.com</option><option value="013QNH250000000007V5">invappmi06</option><option value="013QNH250000000007U6">invappmivm01.informatica.com</option><option value="013QNH250000000007VS">invasbhattwin01</option><option value="013QNH250000000007XI">invb2bfmiperf01.informatica.com</option><option value="013QNH250000000007X2">invb2bfmiperf02.informatica.com</option><option value="013QNH250000000007X8">invdbmiwin2201</option><option value="013QNH250000000007XF">invinvpri0101</option><option value="013QNH250000000007WI">invlinpgs1501.informatica.com</option><option value="013QNH250000000007XN">invmftsaas01</option><option value="013QNH250000000007X1">invoracle01</option><option value="013QNH250000000007WW">invpranjal01</option><option value="013QNH250000000007WB">invpriyadev01</option><option value="013QNH250000000007UI">INVR12IPA32</option><option value="013QNH250000000007U9">invr79pam28.informatica.com</option><option value="013QNH2500000000001W">invr79pam78</option><option value="013QNH250000000007VY">invr79pam78.informatica.com</option><option value="013QNH250000000007T2">invr83pam38</option><option value="013QNH250000000007Y9">invrdlin02</option><option value="013QNH250000000007WL">invrdwin6401</option><option value="013QNH250000000007YB">invrh87appmi02</option><option value="013QNH250000000007YJ">invrh9dbmi01.informatica.com</option><option value="013QNH250000000007Y4">invrhappmi03.informatica.com</option><option value="013QNH2500000000001X">invs12reglab01</option><option value="013QNH250000000007WR">invsakushwaha01</option><option value="013QNH250000000007XH">invu18pam12</option><option value="013QNH250000000007XQ">invu20pam02</option><option value="013QNH250000000007X3">invubuntu220401</option><option value="013QNH2500000000001U">invw19dst02</option><option value="013QNH2500000000000K">invw19pam15</option><option value="013QNH250000000007UM">invw19pam21</option><option value="013QNH25000000000029">invw19pwx02</option><option value="013QNH250000000007VF">invyaminirh01.informatica.com</option><option value="013QNH250000000007U4">invygovil01</option><option value="013QNH2500000000001L">INW1PF0VJPER</option><option value="013QNH250000000007SG">INW1PF1AYFT5</option><option value="013QNH250000000007U3">INW2HYDRL3-AAD</option><option value="013QNH250000000007UB">INW67D7BS3-AAD</option><option value="013QNH250000000007XT">INW7L0SSV3-AAD</option><option value="013QNH25000000000005">INWPF14DG23-AAD</option><option value="013QNH250000000007TF">INWPF14DJGX-AAD</option><option value="013QNH2500000000001C">INWPF1BWEQY-AAD</option><option value="013QNH250000000007TC">INWPF1FB25A-AAD</option><option value="013QNH250000000007SJ">INWPF1KS6DQ-AAD</option><option value="013QNH250000000007T5">INWPF1KSUHW-AAD</option><option value="013QNH250000000007XL">INWPF1WYY3C-AAD</option><option value="013QNH2500000000000D">INWPF23SXLS-AAD</option><option value="013QNH250000000007TL">INWPF23TFZ7-AAD</option><option value="013QNH250000000007WX">INWPF28BFDR-AAD</option><option value="013QNH250000000007Y1">INWPF28BHCJ-AAD</option><option value="013QNH25000000000018">INWPF2F1WGN-AAD</option><option value="013QNH2500000000000N">INWPF2H5BBM-AAD</option><option value="013QNH2500000000000F">INWPF2QSS92-AAD</option><option value="013QNH250000000007T3">INWPF2QT6DD-AAD</option><option value="013QNH2500000000000P">INWPF2QT80A-AAD</option><option value="013QNH25000000000009">INWPF35H3B0-AAD</option><option value="013QNH250000000007YH">INWPF386XP7-AAD</option><option value="013QNH250000000007UT">INWPF3LXZME-AAD</option><option value="013QNH250000000007TT">INWPF3M0WGV-AAD_shraddha</option><option value="013QNH250000000007WC">INWPF3MKDF1-AAD</option><option value="013QNH250000000007YI">ip-10-0-10-86.us-west-2.compute.internal</option><option value="013QNH25000000000026">ip-10-21-81-49.us-west-1.compute.internal</option><option value="013QNH250000000007WO">ip-172-31-0-58.us-west-2.compute.internal</option><option value="013QNH250000000007XB">ip-172-31-16-52.eu-north-1.compute.internal</option><option value="013QNH250000000007Y8">ivlhdp1208</option><option value="013QNH250000000007VL">jdeen</option><option value="013QNH250000000007TE">jrathore_laptop</option><option value="013QNH250000000007TZ">karthic_win10_d</option><option value="013QNH250000000007TY">kmarcu1_group</option><option value="013QNH2500000000001J">largewin2019</option><option value="013QNH250000000007SK">linpostgress.informatica.com</option><option value="013QNH250000000007VR">MALPAK_AG</option><option value="013QNH2500000000000T">Manvinder_Secure_Agent_Group</option><option value="013QNH250000000007SR">MBabbraWin_Dublin_SA_GROUP</option><option value="013QNH250000000007Y3">Mbisht_INWPF34DLX5-AAD</option><option value="013QNH25000000000006">mbisht_linux</option><option value="013QNH250000000007UD">mbisht_windows</option><option value="013QNH250000000007ST">mhcentosqa01.informatica.com</option><option value="013QNH2500000000001E">mhlxr74qa01.informatica.com</option><option value="013QNH25000000000014">mhredhat2.informatica.com</option><option value="013QNH25000000000016">mhredhat4.informatica.com</option><option value="013QNH250000000007W7">mhrrh8601.informatica.com</option><option value="013QNH250000000007XW">mhrrh8602.informatica.com</option><option value="013QNH25000000000010">MHV19PWXQA01</option><option value="013QNH250000000007U2">MHV19PWXQA02</option><option value="013QNH250000000007XG">mhv86app01.informatica.com</option><option value="013QNH250000000007SC">MHVR12RND02</option><option value="013QNH250000000007TJ">Miguel-Laptop</option><option value="013QNH250000000007W6">NG_linuxvmprasad</option><option value="013QNH250000000007VQ">NG-INWPF2QSTXM-AAD</option><option value="013QNH250000000007WF">ora21cwin22</option><option value="013QNH25000000000025">Org - 6sx0UHhl0fNbZqvIX5VDeJ Unknown host</option><option value="013QNH2500000000000L">Padmini_laptop</option><option value="013QNH250000000007XZ">PatDesktopVM</option><option value="013QNH2500000000001O">phopkins_desktop</option><option value="013QNH250000000007XP">phopkins_emvphopdesk01</option><option value="013QNH250000000007YC">phopkins_emvrock9phop101</option><option value="013QNH2500000000001F">phopkins_laptop</option><option value="013QNH250000000007T4">PL_DOCKER_65288b89c2f0</option><option value="013QNH25000000000008">PL_Laptop_Docker</option><option value="013QNH250000000007XA">PL_LAPTOP_DOCKER2</option><option value="013QNH250000000007VW">pmchugh</option><option value="013QNH2500000000002F">prashanth01</option><option value="013QNH250000000007WA">PRL_dbvw19pce02</option><option value="013QNH250000000007WE">projectxdomain.informatica.com</option><option value="013QNH250000000007US">Ramya_Linux</option><option value="013QNH250000000007SY">Ramya_windows</option><option value="013QNH250000000007TQ">rdhuvad_dbmi</option><option value="013QNH2500000000000C">rdhuvad_dbmi2</option><option value="013QNH250000000007U8">Reetesh</option><option value="013QNH250000000007S6">rel_agentGroup</option><option value="013QNH250000000007Y0">REL_LINUX</option><option value="013QNH250000000007VB">rh8pcnative1.informatica.com</option><option value="013QNH25000000000003">rhelprodval1</option><option value="013QNH250000000007T7">rklime-VirtualBox</option><option value="013QNH250000000007V1">RPS_Laptop</option><option value="013QNH2500000000001S">RPS-Docker-Rel-1</option><option value="013QNH250000000007SM">RUW1PF15TNCU</option><option value="013QNH250000000007VD">sakushwaha</option><option value="013QNH250000000007WV">Sandhya</option><option value="013QNH250000000007U1">sathish-agent-group</option><option value="013QNH250000000007SE">sathish-laptop-group</option><option value="013QNH250000000007V8">SBP_laptop</option><option value="013QNH25000000000027">SBSM_QAPOD</option><option value="013QNH250000000007VU">smalwe-rel-test-env</option><option value="013QNH250000000007WT">Snowflake Integrator</option><option value="013QNH250000000007UA">soukumar_dbmi</option><option value="013QNH250000000007TN">Soumay</option><option value="013QNH2500000000000R">Soumay_INFA</option><option value="013QNH250000000007TI">sree</option><option value="013QNH250000000007UF">Sreenitha</option><option value="013QNH250000000007VE">SreeWindows</option><option value="013QNH2500000000000A">SS_Laptop</option><option value="013QNH250000000007TA">stephen_laptop_rel</option><option value="013QNH2500000000001G">stevebdublin</option><option value="013QNH250000000007WJ">TS_cloudagent2</option><option value="013QNH25000000000013">ukvlxrh74rnd06</option><option value="013QNH250000000007XK">Umar</option><option value="013QNH2500000000000M">USW1PF0Z2GTT</option><option value="013QNH2500000000001H">USW1PF18WSG6</option><option value="013QNH250000000007WU">USWPF2J5S6H-AAD</option><option value="013QNH2500000000000O">USWPF2R1VJK-AAD</option><option value="013QNH250000000007W5">USWPF2T83WW-AAD</option><option value="013QNH250000000007TH">USWPF30AQ27-AAD</option><option value="013QNH2500000000002A">USWPF3HZNTE-AAD</option><option value="013QNH250000000007SV">USWPF3JBPZS-AAD</option><option value="013QNH250000000007WH">WIN10-64</option><option value="013QNH2500000000000I">win2019cynthy</option><option value="013QNH25000000000024">winvm</option></select></td></tr></div><div style="display: table-row-group;"><tr class="stdAttrsRowClass"><td class="lbl first"></td><td class="lbl first" data-dynamic="false"><!-- react-text: 479 -->Pinecone API Key:<!-- /react-text --><!-- react-empty: 480 --></td><td class="val icn first"><input type="password" class="text textsmall" value="********" id="AccessKey" autocomplete="new-password"></td></tr><tr class="stdAttrsRowClass"><td class="lbl first"></td><td class="lbl first" data-dynamic="false"><!-- react-text: 487 -->Project ID:<!-- /react-text --><!-- react-empty: 488 --></td><td class="val icn first"><input type="text" class="text textsmall" value="" id="SecretKey" autocomplete="new-password"></td></tr><tr class="stdAttrsRowClass"><td class="lbl first"></td><td class="lbl first" data-dynamic="false"><!-- react-text: 495 -->Index Name:<!-- /react-text --><span class="InfRqd">*</span></td><td class="val icn first"><input type="text" class="text textsmall" value="appmi/automation" id="FolderPath" autocomplete="new-password"></td></tr><tr class="stdAttrsRowClass"><td class="lbl first"></td><td class="lbl first" data-dynamic="false"><!-- react-text: 503 -->Index Type:<!-- /react-text --><!-- react-empty: 504 --></td><td class="val icn first"><select id="RegionName" class="text textsmall"><option value="Serverless">Serverless</option><option value="Pod">Pod</option></select></td></tr><tr class="stdAttrsRowClass"><td class="lbl first"></td><td class="lbl first" data-dynamic="false"><!-- react-text: 554 -->Index Dimensions:<!-- /react-text --><!-- react-empty: 555 --></td><td class="val icn first"><input type="text" class="text textsmall" value="" id="IAMRoleARN" autocomplete="new-password"></td></tr><tr class="stdAttrsRowClass"><td class="lbl first"></td><td class="lbl first" data-dynamic="false"><!-- react-text: 554 -->Cloud Provider:<!-- /react-text --><!-- react-empty: 555 --></td><td class="val icn first"><input type="text" class="text textsmall" value="" id="IAMRoleARN" autocomplete="new-password"></td></tr><tr class="stdAttrsRowClass"><td class="lbl first"></td><td class="lbl first" data-dynamic="false"><!-- react-text: 554 -->Region:<!-- /react-text --><!-- react-empty: 555 --></td><td class="val icn first"><input type="text" class="text textsmall" value="" id="IAMRoleARN" autocomplete="new-password"></td></tr><tr class="stdAttrsRowClass"><td class="lbl first"></td><td class="lbl first" data-dynamic="false"><!-- react-text: 554 -->Embedding Provider API Key:<!-- /react-text --><!-- react-empty: 555 --></td><td class="val icn first"><input type="password" class="text textsmall" value="" id="IAMRoleARN" autocomplete="new-password"></td></tr><tr class="stdAttrsRowClass"><td class="lbl first"></td><td class="lbl first" data-dynamic="false"><!-- react-text: 554 -->Embedding Model:<!-- /react-text --><!-- react-empty: 555 --></td><td class="val icn first"><input type="text" class="text textsmall" value="" id="IAMRoleARN" autocomplete="new-password"></td></tr><!-- react-empty: 542 --></div></div></div></table></div></div></div>
+
+        </td>
+        </tr>
+        </tbody></table>
+</div>
+</body>
+</html>
